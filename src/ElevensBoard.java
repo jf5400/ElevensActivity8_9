@@ -53,8 +53,21 @@ public class ElevensBoard extends Board {
      */
     @Override
     public boolean isLegal(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-        return true;
+        if(selectedCards.size()==2){
+            if(selectedCards.get(0)+selectedCards.get(1)==11){
+                return true;
+            }
+        }
+        else if(selectedCards.size()==3){
+            boolean yes = true;
+            for(int i=0; i<3; i++){
+                if(selectedCards.get(i)!=0){
+                    yes=false;
+                }
+            }
+            return yes;
+        }
+        return false;
     }
 
     /**
@@ -67,7 +80,9 @@ public class ElevensBoard extends Board {
      */
     @Override
     public boolean anotherPlayIsPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		for(){
+
+        }
         return true;
     }
 
@@ -93,7 +108,12 @@ public class ElevensBoard extends Board {
      *              include a jack, a queen, and a king; false otherwise.
      */
     private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-        return true;
+        boolean yes = true;
+        for(int i=0; i<3; i++){
+            if(this.crads[selectedCards.get(i)](!=0){
+                yes=false;
+            }
+        }
+        return yes;
     }
 }
