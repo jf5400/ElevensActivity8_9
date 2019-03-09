@@ -76,14 +76,16 @@ public class ElevensBoard extends Board {
 		int k = 0;
 		int q = 0;
 		for (int i = 0; i< size() ; i++){
-		    if(cardAt(i).rank().equals("jack")){
-		        j++;
-            }
-            if(cardAt(i).rank().equals("king")){
-                k++;
-            }
-            if(cardAt(i).rank().equals("queen")){
-                q++;
+		    if( cardAt(i) != null) {
+                if (cardAt(i).rank().equals("jack")) {
+                    j++;
+                }
+                if (cardAt(i).rank().equals("king")) {
+                    k++;
+                }
+                if (cardAt(i).rank().equals("queen")) {
+                    q++;
+                }
             }
         }
         if(j>0 && q>0 && k>0){
